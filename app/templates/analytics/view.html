@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Αναλύσεις{% endblock %}
+
+{% block content %}
+<h1>Αναλύσεις</h1>
+<ul>
+    <li>Συνολικοί Πελάτες: {{ total_clients }}</li>
+    <li>Συνολικά Έργα: {{ total_projects }}</li>
+    <li>Ολοκληρωμένα Έργα: {{ completed_projects }}</li>
+</ul>
+{% endblock %}

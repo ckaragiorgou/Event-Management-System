@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Πελάτες{% endblock %}
+
+{% block content %}
+<h1>Λίστα Πελατών</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Όνομα</th>
+            <th>Επικοινωνία</th>
+            <th>Μέγεθος Εταιρείας</th>
+            <th>Κλάδος</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in clients %}
+        <tr>
+            <td>{{ client.name }}</td>
+            <td>{{ client.contact_details }}</td>
+            <td>{{ client.company_size }}</td>
+            <td>{{ client.industry }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('clients.add_client') }}">Προσθήκη Πελάτη</a>
+{% endblock %}

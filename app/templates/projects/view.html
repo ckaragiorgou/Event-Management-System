@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Έργα{% endblock %}
+
+{% block content %}
+<h1>Λίστα Έργων</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Όνομα</th>
+            <th>Περιγραφή</th>
+            <th>Κατάσταση</th>
+            <th>Προθεσμία</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for project in projects %}
+        <tr>
+            <td>{{ project.name }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.status }}</td>
+            <td>{{ project.deadline }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('projects.add_project') }}">Προσθήκη Έργου</a>
+{% endblock %}

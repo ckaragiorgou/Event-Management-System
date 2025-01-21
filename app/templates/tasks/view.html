@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Εργασίες{% endblock %}
+
+{% block content %}
+<h1>Λίστα Εργασιών</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Τίτλος</th>
+            <th>Κατάσταση</th>
+            <th>Προτεραιότητα</th>
+            <th>Προθεσμία</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.status }}</td>
+            <td>{{ task.priority }}</td>
+            <td>{{ task.deadline }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('tasks.add_task') }}">Προσθήκη Εργασίας</a>
+{% endblock %}
